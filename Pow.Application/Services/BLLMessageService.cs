@@ -13,13 +13,13 @@ namespace Pow.Application.Services
     {
         private readonly IMapper _mapper;
 
-        private IUnitOfWork UnitOfWork { get; }
-
         public BLLMessageService(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this.UnitOfWork = unitOfWork;
             this._mapper = mapper;
         }
+
+        private IUnitOfWork UnitOfWork { get; }
 
         public async Task<int> Add(MessageBL messageBl)
         {

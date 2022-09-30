@@ -56,11 +56,11 @@ namespace IdentityServer
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
-                        config["clientSecret:c_name"]
+                        config["clientSecret:c_name"],
                     },
                     AllowOfflineAccess = true,
                     AllowAccessTokensViaBrowser = true,
-                    AccessTokenLifetime = 1
+                    AccessTokenLifetime = 1,
                 },
             };
         }
