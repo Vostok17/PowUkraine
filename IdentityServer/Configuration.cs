@@ -13,14 +13,14 @@ namespace IdentityServer
             {
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
-                new IdentityResource("roles", new[] { "role" })
+                new IdentityResource("roles", new[] { "role" }),
             };
 
         public static IEnumerable<ApiScope> ApiScopes(IConfiguration config)
         {
             return new List<ApiScope>
             {
-                new ApiScope(config["clientSecret:c_name"], config["clientSecret:c_Disp_name"])
+                new ApiScope(config["clientSecret:c_name"], config["clientSecret:c_Disp_name"]),
             };
         }
 
@@ -31,7 +31,7 @@ namespace IdentityServer
                 new ApiResource(
                     config["clientSecret:c_name"],
                     config["clientSecret:c_Disp_name"],
-                    new[] { JwtClaimTypes.Name }) { Scopes = { config["clientSecret:c_name"] } }
+                    new[] { JwtClaimTypes.Name }) { Scopes = { config["clientSecret:c_name"] } },
             };
         }
 
@@ -45,19 +45,13 @@ namespace IdentityServer
                     ClientName = "Pow Web",
                     ClientSecrets = { new Secret(config["clientSecret:c_id"].ToSha256()) },
                     AllowedGrantTypes = GrantTypes.Code,
-                    RequireClientSecret = false, // todo set code
+                    RequireClientSecret = false,
                     RequirePkce = true,
                     RequireConsent = false,
-                    FrontChannelLogoutUri = config["clientSecret:c_front_logout_uri"], // todo setup with frontend
-                    RedirectUris = { config["clientSecret:c_redirect_uris"] }, // todo setup with frontend
-                    AllowedCorsOrigins =
-                    {
-                        config["clientSecret:c_cors_origin"] // todo setup with frontend and any other
-                    },
-                    PostLogoutRedirectUris =
-                    {
-                        config["clientSecret:c_post_logout"] // todo setup with front end
-                    },
+                    FrontChannelLogoutUri = config["clientSecret:c_front_logout_uri"],
+                    RedirectUris = { config["clientSecret:c_redirect_uris"] },
+                    AllowedCorsOrigins = { config["clientSecret:c_cors_origin"] },
+                    PostLogoutRedirectUris = { config["clientSecret:c_post_logout"] },
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
@@ -67,7 +61,7 @@ namespace IdentityServer
                     AllowOfflineAccess = true,
                     AllowAccessTokensViaBrowser = true,
                     AccessTokenLifetime = 1
-                }
+                },
             };
         }
     }

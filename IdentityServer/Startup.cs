@@ -25,6 +25,8 @@ namespace IdentityServer
         {
             services.AddDbContext<AuthorizationDbContext>(
                 options => { options.UseSqlServer(_appConfiguration.GetValue<string>("DbConnection")); });
+
+            services.AddCustomCorsConfiguration();
             services.AddCustomIdentityConfigurations(_appConfiguration);
             services.AddCustomCookiesConfigurations();
             services.AddCustomAuthenticationConfigurations(_appConfiguration);
@@ -41,6 +43,7 @@ namespace IdentityServer
 
             app.UseStaticFiles();
             app.UseRouting();
+            app.UseCors("AllowAll");
             app.UseIdentityServer();
             app.UseEndpoints(endpoints => { endpoints.MapDefaultControllerRoute(); });
 

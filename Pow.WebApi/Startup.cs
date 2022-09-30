@@ -12,14 +12,14 @@ namespace Pow.WebApi
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            this.Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCustomDapperConfiguration(Configuration);
+            services.AddCustomDapperConfiguration(this.Configuration);
 
             services.AddControllers();
 
@@ -42,7 +42,7 @@ namespace Pow.WebApi
             app.UseCustomExceptionHandler();
             app.UseRouting();
             app.UseHttpsRedirection();
-            app.UseCors("AllowAll"); // todo expand Cors
+            app.UseCors("AllowAll");
             app.UseAuthentication();
             app.UseAuthorization();
 

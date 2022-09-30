@@ -13,8 +13,6 @@ namespace Pow.WebApi.Extensions
         {
             using (var scope = host.Services.CreateScope())
             {
-                var serviceProvider = scope.ServiceProvider;
-
                 try
                 {
                     // todo add need scopes
@@ -33,7 +31,8 @@ namespace Pow.WebApi.Extensions
             Activity.DefaultIdFormat = ActivityIdFormat.W3C;
 
             Log.Logger = new LoggerConfiguration()
-                //.MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+
+                // .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
                 .MinimumLevel.Debug()
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
                 .MinimumLevel.Override("Microsoft.Hosting.Lifetime", LogEventLevel.Information)
