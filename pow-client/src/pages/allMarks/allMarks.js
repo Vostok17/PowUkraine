@@ -32,14 +32,12 @@ function AllMarks() {
             <Basemap basemap={basemap} onChange={setBasemap} />
 
             {marks.map(mark => {
-                const coords = [mark.gpsLatitude, mark.gpsLongitude];
+                const coords = [mark.latitude, mark.longitude];
 
                 return (
                     <Marker key={mark.id} position={coords}>
                         <Popup>
-                            <div>
-                                <h2>{coords}</h2>
-                            </div>
+                            <div></div>
                         </Popup>
                     </Marker>
                 );

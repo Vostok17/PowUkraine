@@ -5,7 +5,6 @@ using AutoMapper;
 using Pow.Application.Models;
 using Pow.Application.Services.Interfaces;
 using Pow.Domain;
-using Pow.Infrastructure.Repositories;
 using Pow.Infrastructure.Repositories.Interfaces;
 
 namespace Pow.Application.Services
@@ -22,12 +21,12 @@ namespace Pow.Application.Services
             _mapper = mapper;
         }
 
-        private IUnitOfWork UnitOfWork { get; }
-
         ~BLLMessageService()
         {
             Dispose(false);
         }
+
+        private IUnitOfWork UnitOfWork { get; }
 
         public void Dispose()
         {
@@ -47,16 +46,6 @@ namespace Pow.Application.Services
             Message message = _mapper.Map<Message>(messageBl);
 
             return await UnitOfWork.Messages.UpdateAsync(message);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (_disposed) return;
-            if (disposing)
-            {
-            }
-
-            _disposed = true;
         }
 
         public async Task<int> DeleteAsync(Guid id)
@@ -93,6 +82,16 @@ namespace Pow.Application.Services
             }
 
             return list;
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed) return;
+            if (disposing)
+            {
+            }
+
+            _disposed = true;
         }
     }
 }
