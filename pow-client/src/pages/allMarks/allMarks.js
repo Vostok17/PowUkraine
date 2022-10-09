@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './style/marks.css';
 import Basemap from '../maps/BaseMaps';
 
 function AllMarks() {
@@ -37,7 +39,15 @@ function AllMarks() {
                 return (
                     <Marker key={mark.id} position={coords}>
                         <Popup>
-                            <div></div>
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="..." />
+                                <div class="card-body">
+                                    <h5 class="card-title">{mark.title}</h5>
+                                    <p class="card-text">
+                                        sdddddddddddddddddddddddddddddddddddddddddddddddddddsdddddddddddddddddddddddddddddddddddddddddddddddddddsdddddddddddddddddddddddddddddddddddddddddddddddddddsdddddddddddddddddddddddddddddddddddddddddddddddddddsdddddddddddddddddddddddddddddddddddddddddddddddddddsdddddddddddddddddddddddddddddddddddddddddddddddddddsddddddddddddddddddddddddddddddddddddddddddddddddddd
+                                    </p>
+                                </div>
+                            </div>
                         </Popup>
                     </Marker>
                 );
