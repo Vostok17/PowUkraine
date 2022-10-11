@@ -104,6 +104,7 @@ const Sidebar = () => {
                             if (userRole === 'All' && item.role === 'Unlogin') {
                                 return <SubMenu item={item} key={index} />;
                             }
+                            return null;
                         })}
                     </SidebarWrap>
                 </SidebarNav>

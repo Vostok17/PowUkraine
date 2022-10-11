@@ -2,35 +2,35 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import '../../style/forms/form.css';
 
-const CenterBlock = styled.div`
-    width: 50%;
-    height: auto;
-    background: #fff;
-    position: absolute;
-    align-items: center;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-    left: 25%;
-    padding: 25px 25px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-`;
+// const CenterBlock = styled.div`
+//     width: 50%;
+//     height: auto;
+//     background: #fff;
+//     position: absolute;
+//     align-items: center;
+//     margin-top: 5rem;
+//     margin-bottom: 5rem;
+//     left: 25%;
+//     padding: 25px 25px;
+//     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+// `;
 
-const BgButton = styled.button`
-    background: #88a87d none repeat scroll 0% 0%;
-    height: 40px;
-    weight: 100px;
-    border-color: #fff;
-    color: #f0a30a;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-top: 1rem;
-    margin-left: 42%;
-    &:hover {
-        color: #fff;
-        background: #6d8764;
-        cursor: pointer;
-    }
-`;
+// const BgButton = styled.button`
+//     background: #88a87d none repeat scroll 0% 0%;
+//     height: 40px;
+//     weight: 100px;
+//     border-color: #fff;
+//     color: #f0a30a;
+//     border-radius: 5px;
+//     font-size: 16px;
+//     margin-top: 1rem;
+//     margin-left: 42%;
+//     &:hover {
+//         color: #fff;
+//         background: #6d8764;
+//         cursor: pointer;
+//     }
+// `;
 
 const Block = styled.div`
     font-size: 1rem;
@@ -45,7 +45,7 @@ const Form = styled.form`
 `;
 
 function FormModal(params) {
-    const [msgData, setMsgData] = useState({
+    const [msgData] = useState({
         Title: params.array.title,
         Id: params.array.id,
         EventDate: params.array.eventDate,
@@ -57,12 +57,12 @@ function FormModal(params) {
         Files: params.array.files,
     });
 
-    function handle(e) {
-        const newData = { ...msgData };
-        newData[e.target.id] = e.target.value;
-        setMsgData(newData);
-        console.log(newData);
-    }
+    // function handle(e) {
+    //     const newData = { ...msgData };
+    //     newData[e.target.id] = e.target.value;
+    //     setMsgData(newData);
+    //     console.log(newData);
+    // }
 
     return (
         <div>

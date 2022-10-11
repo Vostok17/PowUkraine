@@ -75,7 +75,7 @@ export default function MessageTable({ theadData, tbodyData, setAllUsers }) {
     async function updateData(bool, value) {
         setShow(bool);
 
-        tbodyData.map(e => {
+        tbodyData.forEach(e => {
             if (
                 e.id === value.id &&
                 e.title === value.title &&
@@ -103,7 +103,7 @@ export default function MessageTable({ theadData, tbodyData, setAllUsers }) {
                 {tbodyData.map((row, index) => {
                     return (
                         <tr key={index}>
-                            {theadData.map((key, index) => {
+                            {theadData.forEach((key, index) => {
                                 if (key === 'marked') {
                                     return (
                                         <td key={row[key]}>

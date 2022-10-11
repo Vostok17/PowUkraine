@@ -22,18 +22,18 @@ const BgButton = styled.button`
 `;
 
 const Modal = props => {
-    const closeOnEscapeKeyDown = e => {
-        if ((e.charCode || e.keyCode) === 27) {
-            props.onClose();
-        }
-    };
-
     useEffect(() => {
+        const closeOnEscapeKeyDown = e => {
+            if ((e.charCode || e.keyCode) === 27) {
+                props.onClose();
+            }
+        };
+
         document.body.addEventListener('keydown', closeOnEscapeKeyDown);
         return function cleanup() {
             document.body.removeEventListener('keydown', closeOnEscapeKeyDown);
         };
-    }, [closeOnEscapeKeyDown]);
+    }, [props]);
 
     return ReactDOM.createPortal(
         <CSSTransition

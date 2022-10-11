@@ -68,12 +68,12 @@ export default function UsersTable({ theadData, tbodyData, setAllUsers }) {
         return await userManager.GetUserId();
     }
 
-    async function updateUser(value) {
-        if ((await getCurrentUser()) !== value.userId) {
-            await apiService.updateUser(value);
-            updateData();
-        }
-    }
+    // async function updateUser(value) {
+    //     if ((await getCurrentUser()) !== value.userId) {
+    //         await apiService.updateUser(value);
+    //         updateData();
+    //     }
+    // }
 
     async function deleteUser(value) {
         if ((await getCurrentUser()) !== value.userId) {
