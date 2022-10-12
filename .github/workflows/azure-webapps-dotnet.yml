@@ -23,12 +23,12 @@ jobs:
           dotnet-version: ${{ env.NETCORE_VERSION }}
 
       - name: Restore
-        run: dotnet restore Pow.WebApi
+        run: dotnet restore
 
       - name: Build
-        run: dotnet build --no-restore Pow.WebApi
+        run: dotnet build --no-restore -c Release
 
-      - name: Publish
+      - name: Publish app for deploy
         run: dotnet publish --no-build -c Release -o ./Pow.WebApi/published
         working-directory: Pow.WebApi
 
