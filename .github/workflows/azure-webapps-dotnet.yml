@@ -7,7 +7,7 @@ on:
 
 env:
   AZURE_WEBAPP_NAME: powukraine-webapi
-  AZURE_WEBAPP_PACKAGE_PATH: "./Pow.WebApi/published"
+  AZURE_WEBAPP_PACKAGE_PATH: "./published"
   NETCORE_VERSION: "5.0.x"
 
 jobs:
@@ -29,8 +29,7 @@ jobs:
         run: dotnet build --no-restore -c Release
 
       - name: Publish app for deploy
-        run: dotnet publish --no-build -c Release -o ./Pow.WebApi/published
-        working-directory: Pow.WebApi
+        run: dotnet publish --no-build -c Release -o ./published
 
       - name: Deploy to Azure WebApp
         uses: azure/webapps-deploy@v2
