@@ -41,8 +41,7 @@ namespace Pow.WebApi.Extensions
                 .Enrich.FromLogContext()
                 .WriteTo.File(
                     "./LogData/Pow_Api_WebLog.txt",
-                    rollingInterval:
-                    RollingInterval.Day)
+                    rollingInterval: RollingInterval.Day)
                 .CreateLogger();
         }
     }

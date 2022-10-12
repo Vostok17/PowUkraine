@@ -50,8 +50,7 @@ namespace IdentityServer.Extensions
                 .Enrich.FromLogContext()
                 .WriteTo.File(
                     "./LogData/Pow_Identity_WebLog.txt",
-                    rollingInterval:
-                    RollingInterval.Day)
+                    rollingInterval: RollingInterval.Day)
                 .CreateLogger();
         }
     }

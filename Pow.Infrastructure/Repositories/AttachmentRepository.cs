@@ -81,6 +81,6 @@ namespace Pow.Infrastructure.Repositories
             }
         }
 
-        public async Task<int> UpdateAsync(Attachment entity) => throw new Exception();
+        public Task<int> UpdateAsync(Attachment entity) => throw new Exception();
     }
 }

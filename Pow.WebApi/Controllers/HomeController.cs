@@ -57,7 +57,8 @@ namespace Pow.WebApi.Controllers
                 };
             }
 
-            if (true) // TODO Check is mark empty?
+            // TODO Check is mark empty?
+            if (true)
             {
                 mark = new MarkModel();
                 mark.Disabled = false;
