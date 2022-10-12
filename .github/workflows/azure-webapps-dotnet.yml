@@ -29,7 +29,7 @@ jobs:
         run: dotnet build --no-restore -c Release
 
       - name: Publish app for deploy
-        run: dotnet publish --no-build -c Release -o ./published
+        run: dotnet publish ./Pow.WebApi --no-build -c Release -o ./published
 
       - name: Deploy to Azure WebApp
         uses: azure/webapps-deploy@v2
