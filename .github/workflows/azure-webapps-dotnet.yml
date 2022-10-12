@@ -8,7 +8,7 @@ on:
 env:
   AZURE_WEBAPP_NAME: powukraine-webapi
   AZURE_WEBAPP_PACKAGE_PATH: "./Pow.WebApi/published"
-  NETCORE_VERSION: "5"
+  NETCORE_VERSION: "5.0.x"
 
 jobs:
   build:
